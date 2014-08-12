@@ -1,0 +1,48 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-1">
+						<h5>Sort By:</h5>
+					</div>
+					<div class="col-md-3">
+						<form role="form">
+							<select class="form-control" ng-model="orderMe">
+								<option value="slug" selected>New and Popular</option>
+								<option value="price" selected="selected">Price:
+									Low to High</option>
+								<option value="-price">Price: High to Low</option>
+								
+							</select>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-3" ng-repeat="accessory in accessories | orderBy:orderMe">
+		<div class="panel panel-default">
+			<div class="panel-body text-center">
+				<div>
+					<p>
+						<a href="#/accessories/{{accessory.slug}}" class=""> <img
+							src="http://placehold.it/150x200" />
+						</a>
+					</p>
+				</div>
+				<div>
+					<a href="#/accessories/{{accessories.slug}}">{{accessory.name}}</a>
+				</div>
+				<div>
+					<span class="text-danger"><strong>{{accessory.price |
+							currency}}</strong></span>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

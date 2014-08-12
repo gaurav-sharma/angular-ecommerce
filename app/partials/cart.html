@@ -1,0 +1,45 @@
+<div>
+	<h3>Devices <small><a href="#/phones" ng-show="items.length">Add more</a></small></h3>
+	<section ng-hide="items.length">
+		<p>You have not selected a device.</p>
+		<p>
+			<a href="#/phones" class="btn btn-primary btn-lg">Choose a Device</a>
+	</section>
+
+	<div class="row">
+		<div class="col-md-6">
+			<ul class="media-list">
+				<li class="media" ng-repeat="item in items track by $index">
+					<a class="pull-left" href="#/phones/{{item.slug}}"> 
+						<img class="media-object" src="http://placehold.it/75x100" alt="...">
+					</a>
+					<div class="media-body">
+						<div class="row">
+							<div class="col-xs-8">
+								<h4 class="media-heading">{{item.name}}</h4>
+							</div>
+							<div class="col-xs-4">
+								<h4 class="media-heading pull-right">{{item.price | currency}}</h4>
+							</div>
+						</div>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+							malesuada turpis convallis congue bibendum. Cras laoreet arcu a
+							consectetur tempor. Mauris condimentum dolor in elit ultrices
+							aliquam. Maecenas tempor justo a metus faucibus auctor. Proin
+							quis odio vitae ligula malesuada aliquet non quis nibh</p>
+					</div>
+				</li>				
+			</ul>
+		</div>
+	</div>
+
+	<h3>Service Plans</h3>
+	<section>
+		<p>You have not selected a plan.</p>
+		<p>
+			<a href="#/plans" class="btn btn-primary btn-lg">Choose a Plan</a>
+	</section>
+
+</div>
+
